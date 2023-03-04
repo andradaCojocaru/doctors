@@ -8,7 +8,7 @@ function ChatGpt() {
   // console.log(openai);
   // openai.api_key = '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';
   
-  const configuration = new Configuration({apiKey: "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"}) ;
+  const configuration = new Configuration({apiKey: "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"}) ;
   const openai = new OpenAIApi(configuration);
   const specialties = ['cardiology', 'neurology', 'gastroenterology'];
   const [userInput, setUserInput] = useState('');
