@@ -3,19 +3,72 @@ import './App.css';
 import {Medic} from './Medic'
 import { useEffect } from 'react';
 import { supabase } from './supabase';
+import Searchbar from './Searchbar';
+import styled from '@emotion/styled'
 
-async function getMedic() {
+async function getNume() {
   let { data: test, error } = await supabase
-  .from('test')
-  .select()
+  .from('medic')
+  .select("Nume")
   console.log(test);
 }
 
+async function getPrenume() {
+  let { data: test, error } = await supabase
+  .from('medic')
+  .select("Prenume")
+  console.log(test);
+}
+
+async function getMediciFiltered(filtruSpecializareId) {
+  let { data: test, error } = await supabase
+  .from('medic')
+  .select("*")
+  .eq('SpecializareId', filtruSpecializareId)
+  console.log(test);
+}
+
+async function getSpecializare(filtruSpecializareId) {
+  let { data: test, error } = await supabase
+  .from('Specializare')
+  .select("Categorie")
+  .eq('idSpecializare', filtruSpecializareId)
+  console.log(test);
+}
+
+async function getReview(filtruSpecializareId) {
+  let { data: test, error } = await supabase
+  .from('Review')
+  .select("Comentariu")
+  .eq('MedicId', filtruSpecializareId)
+  console.log(test);
+}
+
+async function getScore(filtruSpecializareId) {
+  let { data: test, error } = await supabase
+  .from('Review')
+  .select("Scor")
+  .eq('MedicId', filtruSpecializareId)
+  console.log(test);
+}
+
+async function getSpecializari(filtruSpecializareId) {
+  let { data: test, error } = await supabase
+  .from('Specializare')
+  .select("Categorie")
+  console.log(test);
+}
 
 function App() {
 
   useEffect(() => {
-    getMedic()
+    //getMediciFiltered(1)
+    //getSpecializare(1)
+    //getReview(1)
+    //getScore(4)
+    //getSpecializari()
+    //getNume()
+    //getPrenume()
   }, [])
   return (
     <div className="App">
@@ -33,6 +86,7 @@ function App() {
           Hello doctors
         </a>
         <Medic></Medic>
+        <Searchbar></Searchbar>
       </header>
     </div>
   );
