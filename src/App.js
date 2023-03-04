@@ -5,6 +5,7 @@ import { useEffect } from 'react';
 import { supabase } from './supabase';
 import Searchbar from './Searchbar';
 import styled from '@emotion/styled'
+import ChatGpt from './ChatGpt';
 
 async function getNume() {
   let { data: test, error } = await supabase
@@ -87,6 +88,7 @@ function App() {
         </a>
         <Medic></Medic>
         <Searchbar></Searchbar>
+        <ChatGpt></ChatGpt> 
       </header>
     </div>
   );
