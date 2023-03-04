@@ -3,6 +3,8 @@ import './App.css';
 import {Medic} from './Medic'
 import { useEffect } from 'react';
 import { supabase } from './supabase';
+import ChatGpt from './ChatGpt';
+
 
 async function getMedic() {
   let { data: test, error } = await supabase
@@ -33,6 +35,7 @@ function App() {
           Hello doctors
         </a>
         <Medic></Medic>
+        <ChatGpt></ChatGpt> 
       </header>
     </div>
   );
