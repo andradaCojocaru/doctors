@@ -4,9 +4,9 @@ import "./App.css";
 import styled from '@emotion/styled'
 
 function Searchbar() {
+  
   return (
     <div className="main">
-      <h1>React Search</h1>
       <div className="search">
         <TextField
           id="outlined-basic"

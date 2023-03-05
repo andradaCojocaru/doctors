@@ -5,6 +5,7 @@ import { useEffect } from 'react';
 import { supabase } from './supabase';
 import Searchbar from './Searchbar';
 import styled from '@emotion/styled'
+import ChatGpt from './ChatGpt';
 
 async function getNume() {
   let { data: test, error } = await supabase
@@ -52,21 +53,12 @@ async function getScore(filtruSpecializareId) {
   console.log(test);
 }
 
-async function getSpecializari(filtruSpecializareId) {
-  let { data: test, error } = await supabase
-  .from('Specializare')
-  .select("Categorie")
-  console.log(test);
-}
-
 function App() {
-
   useEffect(() => {
     //getMediciFiltered(1)
     //getSpecializare(1)
     //getReview(1)
     //getScore(4)
-    //getSpecializari()
     //getNume()
     //getPrenume()
   }, [])
@@ -86,7 +78,7 @@ function App() {
           Hello doctors
         </a>
         <Medic></Medic>
-        <Searchbar></Searchbar>
+        <ChatGpt></ChatGpt>
       </header>
     </div>
   );
