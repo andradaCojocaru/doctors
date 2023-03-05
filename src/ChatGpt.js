@@ -11,7 +11,7 @@ function ChatGpt() {
   // console.log(openai);
   // openai.api_key = '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';
   
-  const configuration = new Configuration({apiKey: "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"}) ;
+  const configuration = new Configuration({apiKey: "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"}) ;
   const openai = new OpenAIApi(configuration);
   const [userInput, setUserInput] = useState('');
   const [suggestedSpecialty, setSuggestedSpecialty] = useState('');
